@@ -74,7 +74,7 @@ export default function App() {
                 Repositório de Métodos de Escuta Cidadã
               </h1>
               <p className="text-sm text-gray-600 mt-1">
-                Inspirado no HyperIsland Toolbox • {fichaTecnicaLoaded ? `${metodos.length} métodos disponíveis` : 'carregue os CSVs para começar'}
+                Arca Envolvimento Social • {fichaTecnicaLoaded ? `${metodos.length} métodos disponíveis` : 'carregue os CSVs para começar'}
               </p>
             </div>
           </div>
