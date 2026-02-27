@@ -1,18 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { fileURLToPath } from 'node:url'
-import { dirname, resolve } from 'node:path'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+// GitHub Pages de repo = https://usuario.github.io/NOME-DO-REPO/
+const repo = 'p4dashboard'
 
 export default defineConfig({
+  base: process.env.GITHUB_ACTIONS ? `/${repo}/` : '/',
   plugins: [react()],
-  base: './',
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, './src'),
-    },
-  },
-  assetsInclude: ['**/*.svg', '**/*.csv'],
 })
