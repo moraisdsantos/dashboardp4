@@ -1,10 +1,16 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// GitHub Pages de repo = https://usuario.github.io/NOME-DO-REPO/
-const repo = 'dashboardp4'
+// Repo do GitHub (o nome depois do usuário)
+const repoName = 'p4dashboard'
 
-export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? `/${repo}/` : '/',
-  plugins: [react()],
+export default defineConfig(({ command }) => {
+  // Em dev (npm run dev): usa "/" pra funcionar local
+  // Em build (npm run build): usa "/p4dashboard/" pra funcionar no GitHub Pages
+  const base = command === 'build' ? `/${repoName}/` : '/'
+
+  return {
+    base,
+    plugins: [react()],
+  }
 })
