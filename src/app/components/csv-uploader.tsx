@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { CheckCircle2, Loader2 } from 'lucide-react';
-import fichaTecnicaCsv from '../../import/ficha_tecnica.csv?raw';
-import passosAplicacaoCsv from '../../import/passos_aplicacao.csv?raw';
+import fichaTecnicaCsv from '../../imports/ficha_tecnica.csv?raw';
+import passosAplicacaoCsv from '../../imports/passos_aplicacao.csv?raw';
 
 interface CSVUploaderProps {
   onFichaTecnicaLoad: (file: File) => Promise<void>;
